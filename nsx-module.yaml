@@ -1,0 +1,37 @@
+schema_version: 1
+
+module:
+  name: nsx-ambiq-bsp-r5
+  type: backend_specific
+  category: sdk_component
+  version: "0.1.0"
+
+support:
+  ambiqsuite: true
+  zephyr: false
+
+build:
+  cmake:
+    package: nsx_board_apollo510_evb
+    targets:
+      - nsx::ambiq_bsp
+
+depends:
+  required:
+    - nsx-ambiqsuite-r5
+    - nsx-ambiq-hal-r5
+  optional: []
+
+compatibility:
+  boards:
+    - apollo5b_evb
+    - apollo510_evb
+    - apollo510b_evb
+    - apollo330mP_evb
+  socs:
+    - apollo5b
+    - apollo510
+    - apollo510b
+    - apollo330P
+  toolchains:
+    - arm-none-eabi-gcc
